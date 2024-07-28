@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fake News Detection Home</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome to Fake News Detection</h2>
+        <p>Please login to use the prediction service.</p>
+        <a href="{% url 'login' %}" class="button">Login</a>
+    </div>
+</body>
+</html>

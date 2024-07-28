@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fake News Prediction</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>Check if news is real or fake!</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <textarea name="text" placeholder="Enter the news here..." required>{{ text|default:'' }}</textarea>
+            <button type="submit">Predict</button>
+        </form>
+        {% if result %}
+        <div class="result">
+            <h3>The news is {{ result }}</h3>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
