@@ -1,35 +1,14 @@
 Fake News Detection
+
 This is a web application built with Django that allows users to check if a piece of news is real or fake. The application uses a machine learning model to make predictions based on the input text provided by the user.
 
 Features
- # User authentication (login required to use the prediction service)
- # Input news text and predict whether it is real or fake
- # Display the entered news text and prediction result
- # Styled UI for better user experience
+ #User authentication (login required to use the prediction service)
+ #Input news text and predict whether it is real or fake
+ #Display the entered news text and prediction result
+ #Styled UI for better user experience
  
-Project Structure
 
-fake_news_project/
-│
-├── fake_news_project/
-│   ├── __init__.py
-│   ├── settings.py
-│   ├── urls.py
-│   └── wsgi.py
-│
-├── fake_news_app/
-│   ├── __init__.py
-│   ├── views.py
-│   ├── urls.py
-│   └── templates/
-│       ├── login.html
-│       ├── predict.html
-│       └── fake_news.html
-│
-├── manage.py
-├── preprocess.py
-├── fake_news_model.pkl
-└── vectorizer.pkl
 
 
 Installation
