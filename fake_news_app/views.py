@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
+from . forms import RegisterForm
 from django.contrib import messages
 import joblib
 
@@ -20,6 +21,23 @@ def user_login(request):
             messages.error(request, 'Invalid username or password')
     return render(request, 'login.html')
 
+def user_register(request):
+    if request.method == 'POST':
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            messages.success(request, 'Registration successful!')
+            return redirect('login')
+        else:
+            messages.error(request, "An error occured during the registeration")
+    else:
+        form = RegisterForm()
+        
+    return render(request, 'register.html', {'form':form })
+        
+    
+    
+    
 @login_required
 def predict(request):
     if request.method == 'POST':
